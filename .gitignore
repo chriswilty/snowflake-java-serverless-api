@@ -1,0 +1,17 @@
+# DEPENDENCIES, TYPES & BUILD OUTPUT
+*.js
+*.d.ts
+node_modules
+build
+
+# LOCAL CONFIG & SECRETS - NEVER COMMIT!
+.env*
+!.env.example
+
+# CDK
+.cdk.staging
+cdk.out
+
+# IDEs
+.idea
+.vscode

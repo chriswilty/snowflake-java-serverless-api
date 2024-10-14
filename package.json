@@ -1,0 +1,30 @@
+{
+  "name": "snowflake-java-serverless-api",
+  "version": "0.1.0",
+  "bin": {
+    "temp-cdk": "bin/main.js"
+  },
+  "scripts": {
+    "synth": "cdk synth -q",
+    "synth:local": "cdk synth -q --context timeout=120",
+    "deploy": "cdk deploy --app cdk.out --all",
+    "destroy": "cdk destroy --app cdk.out --all",
+    "clean": "rimraf cdk.out",
+    "sam:lambda": "sam.cmd local invoke -t cdk.out/ApiStack.template.json",
+    "sam:api": "sam.cmd local start-api -t cdk.out/ApiStack.template.json --warm-containers EAGER"
+  },
+  "devDependencies": {
+    "@types/node": "^20.16.10",
+    "aws-cdk": "^2.161.0",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.161.0",
+    "constructs": "^10.3.0",
+    "dotenv": "^16.4.5",
+    "md5-file": "^5.0.0",
+    "source-map-support": "^0.5.21"
+  }
+}
